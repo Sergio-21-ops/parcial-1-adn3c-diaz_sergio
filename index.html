@@ -9,12 +9,34 @@
   <script src="scripts/vue2-filters.js"></script>
 </head>
 <body>
-		  <div class="contenedor" v-cloak>
-    <div id="app">
+<div class="contenedor" v-cloak>
+ <div id="app">
+<h1 id="logo" class="d-block mx-auto">{{titulo}}</h1>
+      <nav class="nav nav-pills nav-fill">
+    <ul :class="{barraNav}">
+    <li class="nav-item"><router-link to="/" >Home</router-link></li>   
+    <li class="nav-item"><router-link to="/ver">Noticias </router-link></li>
+    </ul>
+      </nav>
 
-   
+
+  	<transition name="fade" mode="out-in">
+  	<router-view></router-view>
+	 </transition>
+   <footer v-once :class="{fondo}">
+
+    
+    
+    <div class="text-center my-5">
+      <p :class="{pFooter}">Sergio Diaz 1 Parcial 3ADMTN</p>
+    </div>
+    
+  
+  </footer>
   </div>
 
-  </div>
+</div>
+ <script src="scripts/router/rutas.js"></script>
+ <script src="scripts/router/vue-router.js"></script>	
 </body>
 </html>
