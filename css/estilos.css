@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+#logo {
+            background: url("../img/prenpublogo.png");
+            font-size: 0;
+            top: 8px;
+            z-index: 1031;
+			width: 300px;
+    height: 300px;
+        }
+
+body{
+ min-height: 100vh;
+background: #e5e5e5;
+ }
+p{
+ padding: 1em; 
+}
+ header{
+ 
+ background:#f3b586;
+ }
+
+
+h2,h3,h4{
+  padding: 1em;
+}
+.nav-link{
+
+line-height:2em;
+}
+.barraNav{
+    display:contents;
+}
+.fondo{
+  background-color:black;
+  padding: 3em;
+}
+.pFooter{
+  color:white;
+}
+#parrafo{
+text-align:center;
+}
+li{
+list-style: none;
+}
+
+a{display:inline-block; width: 300px;padding:10px; color:black;text-decoration: none;}
+
+.router-link-exact-active{
+  color:white;
+  background: rgb(0, 0, 0);
+}
+
+.card-body {
+  background: white;
+  margin: 1em;
+}
+.card-title {
+  text-align: center;
+}
+.X {
+  color: #fff;
+  background-color: #000000;
+  float: right;
+}
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 0.2s ease;
+
+}
+
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
