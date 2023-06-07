@@ -58,10 +58,21 @@ template:`
 		</div>
 </div>`,
 methods:{
+	guardar:function(form_data){
+		if(!localStorage.dato){
+			arr=[]
+		}else{
+			arr=JSON.parse(localStorage.getItem("dato"))
+			}
 
+		arr.push(form_data)
+		localStorage.setItem("dato",JSON.stringify(arr))
+	
+		this.$router.push('/ver');
 }
 },
 
 destroyed: function(){
+	console.log("se destruyo la instancia")
 }
 });
