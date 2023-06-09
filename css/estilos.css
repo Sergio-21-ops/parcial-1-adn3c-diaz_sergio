@@ -81,4 +81,31 @@ a{display:inline-block; width: 300px;padding:10px; color:black;text-decoration: 
   transition: opacity 0.2s ease;
   opacity: 0;
 }
-
+.classBien{color:green ;display:none}
+.classError{color:red;}
+		
+.modalDialog {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:1;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+transition: opacity 400ms ease-in;
+}
