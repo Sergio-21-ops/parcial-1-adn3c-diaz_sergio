@@ -100,11 +100,11 @@ methods:{
 		localStorage.setItem("dato",JSON.stringify(arr))
 	
 		this.$router.push('/ver');
-}
 },
-cerrar:function(){
+	cerrar:function(){
 		 this.verificar = true
 	},
+},
 destroyed: function(){
 	console.log("se destruyo la instancia")
 }
