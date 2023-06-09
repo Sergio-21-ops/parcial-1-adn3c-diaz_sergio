@@ -10,8 +10,8 @@ Vue.component("ver-componente", {
 				<div class="container">
 				<div class="row">
                     <div class="card-body" v-for="item in local">
+		    <button class="X" @click="borrar(item)">X</button>
                         <h3 class="card-title">{{item.titulo}}</h3>
-						<button class="X" @click="borrar(item)">X</button>
                         <h4 class="card-subtitle mb-2 text-muted">Por {{item.autor}}</h4>
                         <p class="card-text">{{item.sinopsis}}</p>
 						<p class="card-text">{{item.descripcion}}</p>
