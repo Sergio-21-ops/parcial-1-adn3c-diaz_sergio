@@ -7,6 +7,7 @@ Vue.component('componente-pnoticias', {
 				cuerpo:"",
 				sinopsis:"",
 			},
+		verificar:true,
 		arr:[]
 		}
 
@@ -45,7 +46,7 @@ template:`
 		
 		<div class="col">			
 		<label>Descripcion</label>
-		<textarea v-model="form_data.descripcion" class="form-control"></textarea>
+		<textarea v-model.trim="form_data.descripcion" class="form-control"></textarea>
 		</div>
 
 		</div>
@@ -54,11 +55,41 @@ template:`
 		<button type="button" class="btn btn-lg btn-block" @click="guardar(form_data)" value="Guardar">Enviar</button>
 		
 		</form>
-
+		<div :class="verificar ? 'classBien' : 'classError'">
+				<div id="openModal" class="modalDialog">
+						<div class="modal-content" >
+                            <div class="modal-body">
+									<button class="X" @click="cerrar" >X</button>
+									<p class="text-center my-5">Llene todos los espacios para continuar</p> 
+                            </div>
+                        </div>
+				</div>
+			</div>
 		</div>
 </div>`,
 methods:{
 	guardar:function(form_data){
+		
+		if (this.form_data.titulo == "") {
+        this.verificar = false
+        return
+      }
+	  
+	  if (this.form_data.autor == "") {
+        this.verificar = false
+        return
+      }
+	  
+	  if (this.form_data.sinopsis == "") {
+        this.verificar = false
+        return
+      }
+	  
+	  if (this.form_data.descripcion == "") {
+        this.verificar = false
+        return
+      }
+		
 		if(!localStorage.dato){
 			arr=[]
 		}else{
@@ -71,7 +102,9 @@ methods:{
 		this.$router.push('/ver');
 }
 },
-
+cerrar:function(){
+		 this.verificar = true
+	},
 destroyed: function(){
 	console.log("se destruyo la instancia")
 }
